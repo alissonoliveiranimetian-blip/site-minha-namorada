@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acesso Restrito</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #020617;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    h1 { margin-bottom: 12px; }
+    p { color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <div class="card" id="content" style="display:none">
+    <h1>Bem-vindo 👋</h1>
+    <p>Você acessou a página usando um link válido.</p>
+  </div>  <div class="card" id="blocked" style="display:none">
+    <h1>Acesso negado 🚫</h1>
+    <p>Esse conteúdo só pode ser acessado com um link autorizado.</p>
+  </div>  <script>
+    // token secreto do link
+    const TOKEN_VALIDO = "meulinksecreto123";
+
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("key");
+
+    if (token === TOKEN_VALIDO) {
+      document.getElementById("content").style.display = "block";
+    } else {
+      document.getElementById("blocked").style.display = "block";
+    }
+  </script></body>
+</html>
