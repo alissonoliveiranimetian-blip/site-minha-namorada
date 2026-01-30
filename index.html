@@ -3,70 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geovana 💖</title>
+  <title>Geovana 🌙🖤</title>
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #050505, #0d0d1a);
+      font-family: "Segoe UI", sans-serif;
+      background: radial-gradient(circle, #0b0c19, #000);
       color: white;
+      overflow-x: hidden;
       text-align: center;
     }
 
     header {
-      padding: 60px 20px;
+      padding: 70px 20px 30px;
+      animation: fadeIn 2s ease;
     }
 
     header h1 {
       font-size: 3em;
       color: #ff4da6;
-      margin-bottom: 10px;
+      text-shadow: 0 0 18px rgba(255, 77, 166, 0.7);
     }
 
     header p {
-      font-size: 1.2em;
-      color: #cccccc;
       max-width: 700px;
       margin: auto;
-      line-height: 1.6;
+      font-size: 1.2em;
+      color: #ddd;
+      line-height: 1.7;
     }
 
+    /* CARTA */
+    .carta {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 77, 166, 0.4);
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 0 28px rgba(255, 77, 166, 0.3);
+      animation: fadeUp 2s ease;
+    }
+
+    .carta p {
+      font-size: 1.2em;
+      line-height: 1.85;
+      color: #e6e6e6;
+    }
+
+    /* GALERIA */
     .galeria {
       display: flex;
       justify-content: center;
       gap: 25px;
       flex-wrap: wrap;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
 
     .galeria img {
-      width: 280px;
-      height: 380px;
+      width: 300px;
+      height: 400px;
       object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255, 77, 166, 0.4);
-      transition: 0.3s;
+      border-radius: 22px;
+      box-shadow: 0 0 32px rgba(255, 77, 166, 0.4);
+      transition: 0.4s;
     }
 
     .galeria img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(255, 77, 166, 0.7);
+      transform: scale(1.08);
+      box-shadow: 0 0 60px rgba(255, 77, 166, 0.8);
     }
 
-    .texto {
-      max-width: 800px;
-      margin: auto;
-      padding: 30px 20px;
-      font-size: 1.2em;
-      line-height: 1.8;
-      color: #e6e6e6;
+    /* BOTÃO MÚSICA */
+    .music-btn {
+      margin-top: 25px;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4da6;
+      color: white;
+      font-size: 1.15em;
+      cursor: pointer;
+      box-shadow: 0 0 24px rgba(255, 77, 166, 0.5);
+      transition: 0.3s;
+    }
+
+    .music-btn:hover {
+      background: #ff1f8a;
+      transform: scale(1.04);
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 18px;
+      box-shadow: 0 0 26px rgba(255, 77, 166, 0.3);
+      display: none;
+    }
+
+    /* CORAÇÕES */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 22px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); }
+      to { transform: translateY(-110vh); }
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(45px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     footer {
-      padding: 30px;
-      font-size: 0.9em;
-      color: gray;
+      padding: 35px;
+      font-size: 0.95em;
+      color: #888;
     }
   </style>
 </head>
@@ -74,47 +140,62 @@
 <body>
 
   <header>
-    <h1>Geovana ✨</h1>
+    <h1>Geovana 🌙🖤</h1>
     <p>
-      Esse site é só um pedacinho do que eu sinto por você...
+      Esse site é só um pedacinho do que eu sinto por você…  
+      Aperta o botão aqui embaixo pra tocar a nossa música 🎶
     </p>
+
+    <button class="music-btn" onclick="tocarMusica()">
+      🎵 Tocar “Te Adoro em Tudo”
+    </button>
+
+    <!-- PLAYER -->
+    <iframe id="player" width="360" height="215"
+      src="https://www.youtube.com/embed/Jkm6XFqzxhs?autoplay=1"
+      allow="autoplay; encrypted-media">
+    </iframe>
   </header>
 
   <!-- FOTOS -->
   <section class="galeria">
-    <img src="img/giovana1.jpg.jpeg" alt="Foto da Giovanna 1">
-    <img src="img/giovana2.jpg.jpeg" alt="Foto da Giovanna 2">
+    <img src="img/geovana1.jpg" alt="Geovana 1">
+    <img src="img/geovana2.jpg" alt="Geovana 2">
   </section>
 
-  <!-- TEXTO -->
-  <section class="texto">
-    <p>
-      Geovana… eu não sei nem como explicar direito, mas eu gosto demais de você.
-    </p>
+  <!-- CARTA -->
+  <div class="carta">
+    <p>Geovana… eu não sei nem como explicar direito, mas eu gosto demais de você.</p>
+    <p>Seu sorriso é uma das coisas mais lindas que eu já vi de verdade. Tem algo nele que me prende, que me faz querer ficar ali só admirando.</p>
+    <p>Eu amo seus olhos… eles têm um brilho único, um jeito que eu nunca vou esquecer.</p>
+    <p>Eu gosto de passar meu tempo conversando com você, porque cada momento contigo parece especial, mesmo nas coisas simples.</p>
+    <p>Eu quero muito que chegue logo o dia de estar com você de verdade, e não só pela tela.</p>
+    <p style="color:#ff4da6;">💖 Com carinho, Alisson</p>
+  </div>
 
-    <p>
-      Seu sorriso é uma das coisas mais lindas que eu já vi de verdade.
-      Tem algo nele que me prende, que me faz querer ficar ali só admirando.
-    </p>
+  <footer>
+    Feito especialmente pra Geovana 🌙🖤
+  </footer>
 
-    <p>
-      Eu amo seus olhos… eles têm um brilho único, um jeito que eu nunca vou esquecer.
-    </p>
+  <script>
+    function tocarMusica() {
+      const iframe = document.getElementById("player");
+      iframe.style.display = "block";
+    }
 
-    <p>
-      Eu gosto de passar meu tempo conversando com você, porque cada momento contigo
-      parece especial, mesmo nas coisas simples.
-    </p>
+    // corações subindo
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (18 + Math.random() * 25) + "px";
+      document.body.appendChild(heart);
 
-    <p>
-      Eu quero muito que chegue logo o dia de estar com você de verdade,
-      e não só pela tela.
-    </p>
+      setTimeout(() => heart.remove(), 8200);
+    }, 600);
+  </script>
 
-    <p>
-      Esse site é só uma forma pequena, mas sincera, de mostrar o quanto você é importante pra mim.
-    </p>
-
-
-
+</body>
+</html>
 
