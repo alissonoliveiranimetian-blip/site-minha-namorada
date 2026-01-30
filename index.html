@@ -1,49 +1,118 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acesso Restrito</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giovanna 💖</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
-    }
-    .card {
-      background: #020617;
-      padding: 24px;
-      border-radius: 12px;
-      max-width: 420px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #050505, #0d0d1a);
+      color: white;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,.4);
     }
-    h1 { margin-bottom: 12px; }
-    p { color: #9ca3af; }
+
+    header {
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #ff4da6;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #cccccc;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .galeria {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+    }
+
+    .galeria img {
+      width: 280px;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 77, 166, 0.4);
+      transition: 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 77, 166, 0.7);
+    }
+
+    .texto {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 20px;
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #e6e6e6;
+    }
+
+    footer {
+      padding: 30px;
+      font-size: 0.9em;
+      color: gray;
+    }
   </style>
 </head>
+
 <body>
-  <div class="card" id="content" style="display:none">
-    <h1>Bem-vindo 👋</h1>
-    <p>Você acessou a página usando um link válido.</p>
-  </div>  <div class="card" id="blocked" style="display:none">
-    <h1>Acesso negado 🚫</h1>
-    <p>Esse conteúdo só pode ser acessado com um link autorizado.</p>
-  </div>  <script>
-    // token secreto do link
-    const TOKEN_VALIDO = "meulinksecreto123";
 
-    const params = new URLSearchParams(window.location.search);
-    const token = params.get("key");
+  <header>
+    <h1>Giovanna ✨</h1>
+    <p>
+      Esse site é só um pedacinho do que eu sinto por você...
+    </p>
+  </header>
 
-    if (token === TOKEN_VALIDO) {
-      document.getElementById("content").style.display = "block";
-    } else {
-      document.getElementById("blocked").style.display = "block";
-    }
-  </script></body>
-</html>
+  <!-- FOTOS -->
+  <section class="galeria">
+    <img src="img/giovana1.jpg" alt="Foto da Giovanna 1">
+    <img src="img/giovana2.jpg" alt="Foto da Giovanna 2">
+  </section>
+
+  <!-- TEXTO -->
+  <section class="texto">
+    <p>
+      Giovanna… eu não sei nem como explicar direito, mas eu gosto demais de você.
+    </p>
+
+    <p>
+      Seu sorriso é uma das coisas mais lindas que eu já vi de verdade.
+      Tem algo nele que me prende, que me faz querer ficar ali só admirando.
+    </p>
+
+    <p>
+      Eu amo seus olhos… eles têm um brilho único, um jeito que eu nunca vou esquecer.
+    </p>
+
+    <p>
+      Eu gosto de passar meu tempo conversando com você, porque cada momento contigo
+      parece especial, mesmo nas coisas simples.
+    </p>
+
+    <p>
+      Eu quero muito que chegue logo o dia de estar com você de verdade,
+      e não só pela tela.
+    </p>
+
+    <p>
+      Esse site é só uma forma pequena, mas sincera, de mostrar o quanto você é importante pra mim.
+    </p>
+
+
